@@ -5,6 +5,7 @@ import Cart from "../pages/Cart";
 import MainLayout from "../layout/MainLayout";
 import AuthLayout from "../layout/AuthLayout";
 import Signup from "../pages/Signup";
+import ProductDetail from "../pages/ProductDetail";
 
 const router = Router([
     {
@@ -36,6 +37,10 @@ const router = Router([
             {
                 path: "cart",
                 element: <Cart />
+            },
+            {
+                path: "products/:id",
+                element: <ProductDetail/>
             }
         ]
     }

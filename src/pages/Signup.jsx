@@ -1,12 +1,12 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { AuthContext } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 const Signup = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [error, setError] = useState(null);
-  const {signUp} = useContext(AuthContext);
+  const {signUp} = useAuth();
   function onSubmit(data){
     setError(null)
     let result;

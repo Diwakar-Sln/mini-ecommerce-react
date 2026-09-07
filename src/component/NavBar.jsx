@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../context/AuthContext'
+import { useAuth } from '../context/AuthContext'
 
 const NavBar = () => {
-    const { logout, user } = useContext(AuthContext);
+    const { logout, user } = useAuth();
     const navigate = useNavigate();
     const handleLogout = () => {
         logout();
@@ -17,7 +16,7 @@ const NavBar = () => {
                 </li>
                 <li style={{ display: "flex", alignItems: "center", gap: "20px" }}>
                     <Link to="/home">Home</Link>
-                    <Link to="/cart">Cart</Link>
+                    <Link to="/home/cart">Cart</Link>
                 </li>
                 {
                     !user ?

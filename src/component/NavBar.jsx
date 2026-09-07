@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
 
 const NavBar = () => {
+   const {logout} = useContext(AuthContext);
   return (
     <div style={{padding:"20px"}}>
         <ul style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
@@ -15,6 +17,7 @@ const NavBar = () => {
             <li style={{display:"flex", alignItems:"center", gap:"20px"}}>
                 <Link to="/">Login</Link>
                 <Link to="/">SignUp</Link>
+                <Link onClick={()=>logout()} >Logout</Link>
             </li>
         </ul>
     </div>
